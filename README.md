@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Flex Inventory
 
-## Getting Started
+Tech Stack
+Next.js (App Router), TypeScript
+Tailwind CSS v4 + DaisyUI
+React Testing Library + Jest (next/jest)
+Project structure under src/ (src/app, src/components, src/lib)
 
-First, run the development server:
-
-```bash
+Project Setup/Running the App
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Open http://localhost:3000
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Tests
+Unit tests use Jest with next/jest and React Testing Library.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Run all tests:
+npm test
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Project Structure
+src/app: App Router layouts/pages
+src/components: Reusable UI components (FiltersPanel, Sorter, VehicleCard, ZipSearch, Modal, ErrorBanner)
+src/lib: Utilities, types, and data (utils, types, vehicles)
+public/vehicles: Vehicle images used by VehicleCard
 
-## Learn More
+Key Features
+ZIP-based search
+Modal prompts on initial load
+Input sanitization (digits only) and validation
+Filters panel on the left (desktop sticky)
+DaisyUI collapsible sections
+Checkbox options for Make and Color
+Clear all action
+Multi-select logic: empty = “All”
+Sorter control
+Compact “chip-style” trigger with icon + label
+DaisyUI dropdown menu (Price high/low, Model)
+Vehicle grid
+Responsive cards
+Image zoom on hover
+Price badge and basic specs
+Theming and Styling
+Dark professional gradient background
+Translucent header with blur and subtle indigo-tinted border
+High-contrast checkboxes on dark backgrounds
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+How to Use
+Launch the dev server and open the app.
+Enter a 5-digit ZIP code (e.g., 02116, 10001, or 94105).
+Use the left-side Filters panel to select Makes and Colors.
+Use the Sorter chip to change sorting (Price high/low, Model).
+Hover over vehicle cards to see the image zoom effect.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Testing Details
+Unit Tests:
+src/lib/utils.test.ts: isValidZip and sortVehicles
+src/components/ZipSearch.test.tsx: input sanitization, button state, submit behavior
+src/components/FiltersPanel.test.tsx: checkbox toggles and “Clear all”
 
-## Deploy on Vercel
+Tailwind v4 and DaisyUI 
+Chosen components: card, menu, collapse, modal, checkbox, button.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Data
+Vehicle data is static (src/lib/vehicles.ts) for demo purposes.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+
+
+
+
+
+
+
+
+
