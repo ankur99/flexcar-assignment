@@ -1,76 +1,147 @@
-Flex Inventory
+# 🚗 Flex Inventory
 
-Tech Stack
-Next.js (App Router), TypeScript
-Tailwind CSS v4 + DaisyUI
-React Testing Library + Jest (next/jest)
-Project structure under src/ (src/app, src/components, src/lib)
+A vehicle inventory demo application built with **Next.js App Router**,
+**TypeScript**, **Tailwind CSS v4 + DaisyUI**, and tested with **React
+Testing Library + Jest**.
 
-Project Setup/Running the App
+------------------------------------------------------------------------
+
+## 🛠️ Tech Stack
+
+-   **Next.js (App Router) + TypeScript**
+-   **Tailwind CSS v4 + DaisyUI**
+-   **React Testing Library + Jest** (via `next/jest`)
+-   Project structure under `src/`
+    -   `src/app`
+    -   `src/components`
+    -   `src/lib`
+
+------------------------------------------------------------------------
+
+## ⚡ Project Setup & Running
+
+``` bash
+# Install dependencies
 npm install
-npm run dev
-Open http://localhost:3000
 
-Tests
-Unit tests use Jest with next/jest and React Testing Library.
+# Start development server
+npm run dev
+```
+
+Open the app at: <http://localhost:3000>
+
+------------------------------------------------------------------------
+
+## ✅ Tests
+
+Unit tests use **Jest** with **next/jest** and **React Testing
+Library**.
 
 Run all tests:
+
+``` bash
 npm test
+```
 
-Project Structure
-src/app: App Router layouts/pages
-src/components: Reusable UI components (FiltersPanel, Sorter, VehicleCard, ZipSearch, Modal, ErrorBanner)
-src/lib: Utilities, types, and data (utils, types, vehicles)
-public/vehicles: Vehicle images used by VehicleCard
+### Test Coverage
 
-Key Features
-ZIP-based search
-Modal prompts on initial load
-Input sanitization (digits only) and validation
-Filters panel on the left (desktop sticky)
-DaisyUI collapsible sections
-Checkbox options for Make and Color
-Clear all action
-Multi-select logic: empty = “All”
-Sorter control
-Compact “chip-style” trigger with icon + label
-DaisyUI dropdown menu (Price high/low, Model)
-Vehicle grid
-Responsive cards
-Image zoom on hover
-Price badge and basic specs
-Theming and Styling
-Dark professional gradient background
-Translucent header with blur and subtle indigo-tinted border
-High-contrast checkboxes on dark backgrounds
+-   `src/lib/utils.test.ts` → `isValidZip`, `sortVehicles`
+-   `src/components/ZipSearch.test.tsx` → input sanitization, button
+    state, submit behavior
+-   `src/components/FiltersPanel.test.tsx` → checkbox toggles, **Clear
+    all**
 
+------------------------------------------------------------------------
 
-How to Use
-Launch the dev server and open the app.
-Enter a 5-digit ZIP code (e.g., 02116, 10001, or 94105).
-Use the left-side Filters panel to select Makes and Colors.
-Use the Sorter chip to change sorting (Price high/low, Model).
-Hover over vehicle cards to see the image zoom effect.
+## 📂 Project Structure
 
-Testing Details
-Unit Tests:
-src/lib/utils.test.ts: isValidZip and sortVehicles
-src/components/ZipSearch.test.tsx: input sanitization, button state, submit behavior
-src/components/FiltersPanel.test.tsx: checkbox toggles and “Clear all”
+    src/
+     ├─ app/             # App Router layouts & pages
+     ├─ components/      # Reusable UI (FiltersPanel, Sorter, VehicleCard, ZipSearch, Modal, ErrorBanner)
+     ├─ lib/             # Utilities, types, and data (utils, types, vehicles)
+    public/
+     └─ vehicles/        # Vehicle images used by VehicleCard
 
-Tailwind v4 and DaisyUI 
-Chosen components: card, menu, collapse, modal, checkbox, button.
+------------------------------------------------------------------------
 
-Data
-Vehicle data is static (src/lib/vehicles.ts) for demo purposes.
+## ✨ Key Features
 
+-   🔍 **ZIP-based search** (5-digit input validation & sanitization)
+-   💡 **Modal prompts** on initial load
+-   🎛 **Filters Panel**
+    -   Sticky on desktop
+    -   DaisyUI collapsible sections
+    -   Checkboxes for Make and Color
+    -   **Clear all** option
+    -   Multi-select logic (`empty = All`)
+-   ↕️ **Sorter Control**
+    -   Compact **chip-style trigger** with icon + label
+    -   DaisyUI dropdown menu (Price high/low, Model)
+-   📦 **Vehicle Grid**
+    -   Responsive vehicle cards
+    -   Image zoom on hover
+    -   Price badge + specs
+-   🎨 **Theming & Styling**
+    -   Dark gradient background
+    -   Translucent header with blur + indigo border
+    -   High-contrast checkboxes for dark mode
 
+------------------------------------------------------------------------
 
+## 🚀 How to Use
 
+1.  Start the dev server (`npm run dev`) and open the app.
+2.  Enter a **5-digit ZIP code** (e.g., `02116`, `10001`, `94105`).
+3.  Use the **Filters panel** (left side) to select **Makes** and
+    **Colors**.
+4.  Use the **Sorter chip** to sort results (Price high/low, Model).
+5.  Hover over vehicle cards to view **image zoom effect**.
 
+------------------------------------------------------------------------
 
+## 🧪 Testing Details
 
+-   **Unit Tests**
+    -   `isValidZip`, `sortVehicles` → `src/lib/utils.test.ts`
+    -   `ZipSearch` input sanitization + submit →
+        `src/components/ZipSearch.test.tsx`
+    -   `FiltersPanel` toggles & clear all →
+        `src/components/FiltersPanel.test.tsx`
 
+------------------------------------------------------------------------
 
+## 🎨 Tailwind v4 + DaisyUI Components
 
+-   **Card**
+-   **Menu**
+-   **Collapse**
+-   **Modal**
+-   **Checkbox**
+-   **Button**
 
+------------------------------------------------------------------------
+
+## 📊 Data
+
+-   Static demo data located in:
+
+    ``` ts
+    src/lib/vehicles.ts
+    ```
+
+-   Vehicle images stored in:
+
+        public/vehicles/
+
+------------------------------------------------------------------------
+
+## 📸 Screenshots (Optional)
+
+> *(Add screenshots or GIFs of the UI here for a better developer
+> experience)*
+
+------------------------------------------------------------------------
+
+## 📄 License
+
+MIT License -- free to use and modify.
