@@ -24,7 +24,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </main>
         <footer className="border-t border-neutral-800">
           <div className="mx-auto max-w-6xl px-4 py-6 text-xs text-neutral-400">
-            © Created with 💖 by Ankur Choudhury
+            © Created with ❤️ by Ankur Choudhury
           </div>
         </footer>
       </body>
