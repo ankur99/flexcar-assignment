@@ -135,13 +135,6 @@ npm test
 
 ------------------------------------------------------------------------
 
-## 📸 Screenshots (Optional)
-
-> *(Add screenshots or GIFs of the UI here for a better developer
-> experience)*
-
-------------------------------------------------------------------------
-
 ## 📄 License
 
 MIT License -- free to use and modify.
